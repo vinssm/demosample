@@ -28,9 +28,9 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('deploy') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'mvn cargo:deploy'
             }
         }
     }
