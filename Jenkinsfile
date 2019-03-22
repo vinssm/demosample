@@ -6,13 +6,12 @@ pipeline {
 
 
     stages {
-        stage('Checkout') {
-        agent any
-            steps {x
+        stage('Checkout')
+            steps {
                     checkout scm
                 }
             }
-        }
+            
    //# agent {
     //#    docker {
     //#        image 'maven:3-alpine'
