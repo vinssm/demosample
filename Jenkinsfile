@@ -1,5 +1,3 @@
-def AgentName='Linux'
-def anyBuildFailed='false'
 
 pipeline {
     agent none
@@ -9,7 +7,7 @@ pipeline {
 
     stages {
         stage('Checkout') {
-        agent {label "${AgentName}"}
+        agent any
             steps {
                 script {
                     deleteDir()
@@ -27,7 +25,7 @@ pipeline {
         stage('Build') {
 
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                bat 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
