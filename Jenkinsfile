@@ -26,8 +26,6 @@ pipeline {
         }
         stage('deploy') {
             steps {
-
-
                 sh 'mvn cargo:deploy'
             }
         }
