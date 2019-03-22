@@ -8,11 +8,8 @@ pipeline {
     stages {
         stage('Checkout') {
         agent any
-            steps {
-                script {
-                    deleteDir()
-                    checkOutScm()
-                    bat 'git clone https://github.com/vinssm/demosample.git'
+            steps {x
+                    checkout scm
                 }
             }
         }
